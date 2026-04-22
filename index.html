@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Название вкладки в браузере -->
+  <title>TIKO Summer Calendar 2026</title>
+
+  <!-- Подключение CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- =====================================================
+       ОСНОВНОЙ КОНТЕЙНЕР СТРАНИЦЫ
+       Всё содержимое находится внутри main.passport
+       ===================================================== -->
+  <main class="passport">
+
+    <!-- =====================================================
+         ВЕРХНЯЯ ЧАСТЬ
+   ===================================================== -->
+    <section class="passport-cover">
+      <img src="passport.png" alt="Passport cover design" class="passport-full-image" />
+    </section>
+
+    <!-- =====================================================
+         НИЖНЯЯ ЧАСТЬ С КАЛЕНДАРЁМ
+         Здесь заголовок блока и 13 недель
+         Недели создаются автоматически через JavaScript
+         ===================================================== -->
+    <section class="calendar-section">
+
+      <!-- Верхняя строка блока:
+           слева название секции
+           справа статус, например:
+           Weeks 1–8 are open right now.
+           Этот текст меняет script.js -->
+      <div class="section-header">
+        <h2>Border Stamps / Summer Weeks</h2>
+        <p id="statusText">Checking current week...</p>
+      </div>
+
+      <!-- Сюда JavaScript вставляет все 13 карточек недель -->
+      <div id="calendarGrid" class="calendar-grid"></div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================
+       МОДАЛЬНОЕ ОКНО
+       Открывается при клике на доступную неделю
+       hidden = по умолчанию скрыто
+       ===================================================== -->
+  <div id="eventModal" class="modal hidden">
+
+    <!-- Внутренняя карточка окна -->
+    <div class="modal-card">
+
+      <!-- Кнопка закрытия -->
+      <button id="closeModal" class="close-btn" aria-label="Close">×</button>
+
+      <!-- Декоративный штамп -->
+      <div class="modal-stamp">ENTRY PERMITTED</div>
+
+      <!-- Название события -->
+      <h3 id="modalTitle">Event title</h3>
+
+      <!-- Дата недели -->
+      <p id="modalDate" class="modal-date"></p>
+
+      <!-- Кто рекомендовал -->
+      <p id="modalNickname" class="modal-nickname"></p>
+
+      <!-- Описание события -->
+      <p id="modalDescription" class="modal-description"></p>
+
+      <!-- Кнопка карты -->
+      <div class="modal-actions">
+        <a
+          id="modalMap"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="map-btn"
+        >
+          Open map
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================
+       ПОДКЛЮЧЕНИЕ JAVASCRIPT
+       ===================================================== -->
+  <script src="script.js"></script>
+</body>
+</html>
