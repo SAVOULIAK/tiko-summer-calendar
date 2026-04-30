@@ -153,12 +153,14 @@ const modalTitle = document.getElementById("modalTitle");
 const modalDate = document.getElementById("modalDate");
 const modalNickname = document.getElementById("modalNickname");
 const modalDescription = document.getElementById("modalDescription");
-const modalMap = document.getElementById("modalMap");
+const modalMapFrame = document.getElementById("modalMapFrame");
 
 const calendarStart = new Date("2026-05-18T00:00:00");
 
 function getCurrentWeekIndex() {
-  const today = new Date("2026-07-10"); // тестовая дата всю функцию заменила для тестирования окошек
+  // TEST DATE for development.
+  // Later change this line to: const today = new Date();
+  const today = new Date("2026-07-10T00:00:00");
 
   const diffMs = today - calendarStart;
   const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
@@ -192,18 +194,23 @@ function updateStatusText(currentWeekIndex) {
   }
 }
 
+function getEmbedMapUrl(mapUrl) {
+  return `${mapUrl}&output=embed`;
+}
+
 function openModal(item) {
   modalTitle.textContent = item.title;
   modalDate.textContent = `Week ${item.week}: ${formatDateRange(item.start, item.end)}`;
   modalNickname.textContent = item.nickname;
   modalDescription.textContent = item.description;
-  modalMap.href = item.map;
+  modalMapFrame.src = getEmbedMapUrl(item.map);
 
   modal.classList.remove("hidden");
 }
 
 function closeModal() {
   modal.classList.add("hidden");
+  modalMapFrame.src = "";
 }
 
 function createStampCard(item, currentWeekIndex) {
@@ -215,9 +222,7 @@ function createStampCard(item, currentWeekIndex) {
 
   if (!isUnlocked) {
     card.classList.add("locked");
-  }
-
-  if (isUnlocked) {
+  } else {
     card.classList.add("opened");
   }
 
@@ -242,6 +247,8 @@ function createStampCard(item, currentWeekIndex) {
 function renderCalendar() {
   const currentWeekIndex = getCurrentWeekIndex();
   updateStatusText(currentWeekIndex);
+
+  calendarGrid.innerHTML = "";
 
   summerData.forEach((item) => {
     const card = createStampCard(item, currentWeekIndex);

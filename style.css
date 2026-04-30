@@ -1,65 +1,41 @@
-/* =========================================================
-   ОСНОВНЫЕ ПЕРЕМЕННЫЕ ЦВЕТОВ
-     ========================================================= */
 :root {
   --paper: #efe2c7;
   --paper-2: #e4d2b0;
-  --paper-3: #d8c19b;
   --ink: #243a5a;
   --red: #b65246;
   --green: #5f7a51;
   --blue: #3d6293;
   --purple: #745596;
   --brown: #6f5743;
-  --line: rgba(86, 64, 43, 0.18);
   --shadow: rgba(0, 0, 0, 0.16);
 }
 
-/* =========================================================
-   БАЗОВЫЙ СБРОС
-   box-sizing нужен, чтобы padding не ломал размеры блоков
-   ========================================================= */
+/* Basic reset */
 * {
   box-sizing: border-box;
 }
 
-/* =========================================================
-   BODY — ФОН ВСЕЙ СТРАНИЦЫ
-     ========================================================= */
+/* Page background */
 body {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
   color: var(--ink);
-  background:
-    radial-gradient(circle at top, #f7efdd 0%, #e6d5b5 45%, #d9c29a 100%);
+  background: radial-gradient(circle at top, #f7efdd 0%, #e6d5b5 45%, #d9c29a 100%);
 }
 
-/* =========================================================
-   ОСНОВНОЙ КОНТЕЙНЕР СТРАНИЦЫ
-   max-width = максимальная ширина всей страницы
-   margin: auto = выравнивание по центру
-   ========================================================= */
+/* Main page container */
 .passport {
   max-width: 1380px;
   margin: 22px auto;
   padding: 18px;
 }
 
-/* =========================================================
-   ВЕРХНЯЯ ПАСПОРТНАЯ ЧАСТЬ + БЛОК С НЕДЕЛЯМИ
-   Общий стиль для больших карточек
-   ========================================================= */
+/* Shared card style */
 .passport-cover,
 .calendar-section {
   position: relative;
   background:
     linear-gradient(rgba(255,255,255,0.08), rgba(0,0,0,0.02)),
-    repeating-linear-gradient(
-      0deg,
-      transparent 0px,
-      transparent 36px,
-      rgba(100, 75, 45, 0.03) 37px
-    ),
     var(--paper);
   border: 3px solid #2f2a24;
   border-radius: 28px;
@@ -67,111 +43,27 @@ body {
   overflow: hidden;
 }
 
-/* =========================================================
-   ВНУТРЕННЯЯ РАМКА
-   Чисто декоративная тонкая линия внутри блока
-   ========================================================= */
-.passport-cover::before,
-.calendar-section::before {
-  content: "";
-  position: absolute;
-  inset: 12px;
-  border: 1px solid rgba(72, 58, 38, 0.12);
-  border-radius: 18px;
-  pointer-events: none;
+/* Top image block */
+.passport-cover {
+  padding: 0;
+  display: block;
+  margin-bottom: 20px;
 }
 
-
-
-
-
-/* =========================================================
-   МАЛЕНЬКАЯ ПОДПИСЬ СВЕРХУ
-   "Student travel document"
-   ========================================================= */
-.small-label {
-  margin: 0 0 18px;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  font-size: 0.9rem;
-  color: #8d6240;
-}
-
-
-/* =========================================================
-   БЛОК С ГОДОМ 2026
-   ========================================================= */
-.year-row {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin: 28px 0 26px;
-}
-
-.year {
-  font-size: 3.8rem;
-  font-weight: bold;
-  color: var(--red);
-}
-
-.star {
-  color: var(--red);
-  font-size: 1.2rem;
-}
-
-/* =========================================================
-   ПАСПОРТНАЯ ИНФОРМАЦИЯ
-   Travel period / Destination / Owner / Mission
-   max-width ограничивает ширину блока
-   ========================================================= */
-.passport-info {
+/* Passport image */
+.passport-full-image {
   width: 100%;
-  max-width: 470px;
-  padding: 20px 22px;
-  background: rgba(255, 250, 241, 0.58);
-  border: 2px solid rgba(90, 70, 40, 0.16);
-  border-radius: 16px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+  height: auto;
+  display: block;
+  object-fit: cover;
 }
 
-.passport-info p {
-  margin: 10px 0;
-  font-size: 1.08rem;
-}
-
-/* =========================================================
-   НЕБОЛЬШОЕ ПРИМЕЧАНИЕ СНИЗУ СЛЕВА
-   Collect 13 summer memories...
-   ========================================================= */
-.intro-note {
-  width: 100%;
-  max-width: 430px;
-  margin-top: 24px;
-  padding: 16px 18px;
-  background: rgba(255,255,255,0.34);
-  border-left: 6px solid var(--red);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
-}
-
-.intro-note p {
-  margin: 0;
-  font-size: 1.05rem;
-  line-height: 1.35;
-}
-
-
-/* =========================================================
-   СЕКЦИЯ С НЕДЕЛЯМИ
-   Нижний блок с 13 "штампами"
-   ========================================================= */
+/* Calendar section */
 .calendar-section {
   padding: 26px 22px 30px;
 }
 
-/* =========================================================
-   ВЕРХ СЕКЦИИ НЕДЕЛЬ
-   Слева заголовок, справа текст статуса
-   ========================================================= */
+/* Calendar header */
 .section-header {
   display: flex;
   justify-content: space-between;
@@ -196,20 +88,14 @@ body {
   font-size: 1rem;
 }
 
-/* =========================================================
-   СЕТКА ЯЧЕЕК НЕДЕЛЬ
-   repeat(5, ...) = 5 колонок на широком экране
-   ========================================================= */
+/* Calendar grid */
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(5, minmax(170px, 1fr));
   gap: 18px;
 }
 
-/* =========================================================
-   ОДНА ЯЧЕЙКА-ШТАМП
-   Это сама карточка недели
-   ========================================================= */
+/* One calendar stamp */
 .stamp-door {
   position: relative;
   min-height: 190px;
@@ -225,12 +111,10 @@ body {
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
   overflow: hidden;
+  animation: cardAppear 0.45s ease;
 }
 
-/* =========================================================
-   ВНУТРЕННЯЯ РАМКА ВНУТРИ ЯЧЕЙКИ
-   Только для красоты ~
-   ========================================================= */
+/* Small inner border */
 .stamp-door::before {
   content: "";
   position: absolute;
@@ -240,19 +124,13 @@ body {
   pointer-events: none;
 }
 
-/* =========================================================
-   ЭФФЕКТ ПРИ НАВЕДЕНИИ
-   Работает только для открытых карточек
-   ========================================================= */
+/* Hover effect */
 .stamp-door:hover:not(.locked) {
-  transform: translateY(-5px) rotate(-1deg);
-  box-shadow: 0 10px 18px rgba(0,0,0,0.12);
+  transform: translateY(-7px) rotate(-1.2deg) scale(1.02);
+  box-shadow: 0 14px 22px rgba(0,0,0,0.14);
 }
 
-/* =========================================================
-   ЦВЕТА ДЛЯ РАЗНЫХ НЕДЕЛЬ
-   currentColor потом используется у границы и штампов
-   ========================================================= */
+/* Stamp colors */
 .stamp-door.week-1,
 .stamp-door.week-5,
 .stamp-door.week-8,
@@ -278,12 +156,7 @@ body {
   color: var(--purple);
 }
 
-/* =========================================================
-   ТЕКСТЫ ВНУТРИ ЯЧЕЙКИ
-   week-label = WEEK 1
-   date-label = 18.5. – 24.5.
-   icon = эмодзи снизу
-   ========================================================= */
+/* Text inside stamps */
 .week-label {
   font-size: 2rem;
   font-weight: bold;
@@ -301,20 +174,14 @@ body {
   margin-top: 14px;
 }
 
-/* =========================================================
-   ЗАБЛОКИРОВАННАЯ ЯЧЕЙКА
-   Затемнение + серость
-   ========================================================= */
+/* Locked week */
 .stamp-door.locked {
   filter: grayscale(0.4);
   opacity: 0.6;
   cursor: not-allowed;
 }
 
-/* =========================================================
-   НАДПИСЬ LOCKED НА ЗАКРЫТЫХ ЯЧЕЙКАХ
-   Псевдоэлемент ::after
-   ========================================================= */
+/* Locked label */
 .stamp-door.locked::after {
   content: "LOCKED";
   position: absolute;
@@ -329,9 +196,7 @@ body {
   transform: rotate(-10deg);
 }
 
-/* =========================================================
-   НАДПИСЬ OPENED НА ОТКРЫТЫХ ЯЧЕЙКАХ
-   ========================================================= */
+/* Opened label */
 .stamp-door.opened::after {
   content: "OPENED";
   position: absolute;
@@ -345,10 +210,7 @@ body {
   transform: rotate(-10deg);
 }
 
-/* =========================================================
-   МОДАЛЬНОЕ ОКНО — ТЕМНЫЙ ФОН
-   Покрывает весь экран
-   ========================================================= */
+/* Modal background */
 .modal {
   position: fixed;
   inset: 0;
@@ -358,19 +220,15 @@ body {
   justify-content: center;
   padding: 18px;
   z-index: 999;
+  animation: fadeInOverlay 0.25s ease;
 }
 
-/* =========================================================
-   СКРЫТЫЙ ЭЛЕМЕНТ
-   Когда у modal есть class="hidden", окно скрыто
-   ========================================================= */
+/* Hide modal */
 .hidden {
   display: none;
 }
 
-/* =========================================================
-   КАРТОЧКА МОДАЛЬНОГО ОКНА
-   ========================================================= */
+/* Modal card */
 .modal-card {
   position: relative;
   width: min(760px, 100%);
@@ -381,11 +239,10 @@ body {
   border-radius: 24px;
   padding: 34px 26px 28px;
   box-shadow: 0 16px 34px rgba(0,0,0,0.22);
+  animation: popInModal 0.35s ease;
 }
 
-/* =========================================================
-   КНОПКА ЗАКРЫТИЯ ×
-   ========================================================= */
+/* Close button */
 .close-btn {
   position: absolute;
   top: 10px;
@@ -397,9 +254,7 @@ body {
   color: var(--brown);
 }
 
-/* =========================================================
-   КРАСНЫЙ ШТАМП ENTRY PERMITTED
-   ========================================================= */
+/* Red stamp in modal */
 .modal-stamp {
   display: inline-block;
   margin-bottom: 18px;
@@ -408,6 +263,7 @@ body {
   color: var(--red);
   font-weight: bold;
   transform: rotate(-8deg);
+  animation: stampDrop 0.45s ease 0.1s both;
 }
 
 .modal-card h3 {
@@ -429,77 +285,83 @@ body {
   font-size: 1.08rem;
 }
 
-/* =========================================================
-   КНОПКА КАРТЫ
-   Open map
-   ========================================================= */
-.modal-actions {
-  margin-top: 22px;
+/* Map inside modal */
+.modal-map {
+  margin-top: 20px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 2px solid rgba(90, 70, 40, 0.18);
 }
 
-.map-btn {
-  display: inline-block;
-  text-decoration: none;
-  padding: 12px 18px;
-  border-radius: 12px;
-  background: var(--blue);
-  color: white;
-  font-weight: bold;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-.map-btn:hover {
-  transform: translateY(-2px);
-  opacity: 0.92;
-}
-
-/* =========================================================
-   ВЕРХ  ОДНА БОЛЬШАЯ КАРТИНКА
-   ========================================================= */
-.passport-cover {
-  padding: 0;
-  min-height: auto;
+.modal-map iframe {
   display: block;
+  border: 0;
 }
 
-.passport-full-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
+/* Animations */
+@keyframes fadeInOverlay {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-/* =========================================================
-   АДАПТАЦИЯ ПОД ПЛАНШЕТ если начну опять менять верхнюю часть, незабыть добавить 
-========================================================= */
+
+@keyframes popInModal {
+  0% {
+    opacity: 0;
+    transform: scale(0.92) translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes stampDrop {
+  0% {
+    opacity: 0;
+    transform: scale(1.8) rotate(-14deg);
+  }
+  55% {
+    opacity: 1;
+    transform: scale(0.92) rotate(-8deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(-8deg);
+  }
+}
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Tablet layout */
 @media (max-width: 1100px) {
-  .passport-cover {
-    grid-template-columns: 1fr;
-    min-height: auto;
-  }
-
-  .cover-left {
-    border-right: none;
-    border-bottom: 2px dashed rgba(90, 66, 44, 0.25);
-  }
-
-  .cover-right {
-    min-height: 420px;
-  }
-
   .calendar-grid {
     grid-template-columns: repeat(3, minmax(150px, 1fr));
   }
 }
 
-/* =========================================================
-   АДАПТАЦИЯ ПОД ТЕЛЕФОН 
-   ========================================================= */
+/* Mobile layout */
 @media (max-width: 720px) {
   .passport {
     padding: 10px;
   }
 
-  
+  .calendar-section {
+    padding: 20px;
+  }
+
   .calendar-grid {
     grid-template-columns: repeat(2, minmax(130px, 1fr));
   }
@@ -509,11 +371,7 @@ body {
     align-items: flex-start;
   }
 
-  h1 {
-    font-size: 3rem;
-  }
-
-  .year {
-    font-size: 2.5rem;
+  .section-header h2 {
+    font-size: 2rem;
   }
 }
