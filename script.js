@@ -8,6 +8,7 @@ const summerData = [
     description:
       "Start summer with a relaxing picnic near the sea. Bring snacks, a blanket and enjoy Helsinki’s early summer atmosphere.",
     icon: "🧺",
+    image: "images/Kaivopuisto_picnic.jpg",
     map: "https://www.google.com/maps?q=Kaivopuisto+Helsinki"
   },
   {
@@ -19,6 +20,7 @@ const summerData = [
     description:
       "Take the ferry and explore the sea fortress. Great views, walking routes and perfect photo spots for a summer day.",
     icon: "⛴️",
+    image: "images/Suomenlinna.jpg",
     map: "https://www.google.com/maps?q=Suomenlinna+Helsinki"
   },
   {
@@ -30,6 +32,7 @@ const summerData = [
     description:
       "Enjoy a cycling day through Helsinki Central Park. A calm green route with lots of fresh air and easy movement.",
     icon: "🚲",
+    image: "images/Keskuspuisto.jpg",
     map: "https://www.google.com/maps?q=Helsinki+Central+Park"
   },
   {
@@ -41,6 +44,7 @@ const summerData = [
     description:
       "Visit the amusement park area and enjoy a lively summer evening with lights, rides and fun atmosphere.",
     icon: "🎵",
+    image: "images/Linnanmaki.jpg",
     map: "https://www.google.com/maps?q=Linnanm%C3%A4ki+Helsinki"
   },
   {
@@ -52,6 +56,7 @@ const summerData = [
     description:
       "A peaceful visit to the botanic garden is perfect for a quieter summer week. Great place for photos and relaxing.",
     icon: "🌸",
+    image: "images/Botanic-Garden-Walk.jpg",
     map: "https://www.google.com/maps?q=Kaisaniemi+Botanic+Garden+Helsinki"
   },
   {
@@ -63,6 +68,7 @@ const summerData = [
     description:
       "Spend a warm summer day at one of Helsinki’s best-known beaches. You can swim, sunbathe or just chill with friends.",
     icon: "🏖️",
+    image: "images/Hietaranta.jpg",
     map: "https://www.google.com/maps?q=Hietaniemi+Beach+Helsinki"
   },
   {
@@ -74,6 +80,7 @@ const summerData = [
     description:
       "Take a camera or phone and capture summer moments around Oodi, Töölönlahti and central Helsinki.",
     icon: "📷",
+    image: "images/oodi.jpg",
     map: "https://www.google.com/maps?q=Oodi+Helsinki"
   },
   {
@@ -85,6 +92,7 @@ const summerData = [
     description:
       "Try a seaside activity week. A simple waterfront trip or kayak-themed day makes the calendar more adventurous.",
     icon: "🛶",
+    image: "images/kayak.jpg",
     map: "https://www.google.com/maps?q=Helsinki+waterfront"
   },
   {
@@ -96,6 +104,7 @@ const summerData = [
     description:
       "Take a break from the city and enjoy trails, lakes and forest views. A great week for a nature challenge.",
     icon: "🌲",
+    image: "images/nuuksio.jpg",
     map: "https://www.google.com/maps?q=Nuuksio+National+Park"
   },
   {
@@ -107,6 +116,7 @@ const summerData = [
     description:
       "Simple but perfect: walk by the sea, get ice cream and enjoy the summer mood near the city center.",
     icon: "🍦",
+    image: "images/Ice-Cream.jpg",
     map: "https://www.google.com/maps?q=Helsinki+Market+Square"
   },
   {
@@ -118,6 +128,7 @@ const summerData = [
     description:
       "Pools, sea views and a summer city vibe. Great choice for a more relaxing week with friends or family.",
     icon: "🌊",
+    image: "images/allas-pool.jpg",
     map: "https://www.google.com/maps?q=Allas+Sea+Pool+Helsinki"
   },
   {
@@ -129,6 +140,7 @@ const summerData = [
     description:
       "Spend the day outdoors, explore island scenery and enjoy a peaceful summer atmosphere close to the city.",
     icon: "🏕️",
+    image: "images/Seurasaari.jpg",
     map: "https://www.google.com/maps?q=Seurasaari+Helsinki"
   },
   {
@@ -140,6 +152,7 @@ const summerData = [
     description:
       "Finish the calendar with a stylish seaside evening. Sauna, terrace and sunset views make a memorable ending.",
     icon: "🌅",
+    image: "images/loyly.jpg",
     map: "https://www.google.com/maps?q=L%C3%B6yly+Helsinki"
   }
 ];
@@ -153,6 +166,7 @@ const modalTitle = document.getElementById("modalTitle");
 const modalDate = document.getElementById("modalDate");
 const modalNickname = document.getElementById("modalNickname");
 const modalDescription = document.getElementById("modalDescription");
+const modalImage = document.getElementById("modalImage");
 const modalMapFrame = document.getElementById("modalMapFrame");
 
 const calendarStart = new Date("2026-05-18T00:00:00");
@@ -205,6 +219,16 @@ function openModal(item) {
   modalDescription.textContent = item.description;
   modalMapFrame.src = getEmbedMapUrl(item.map);
 
+  if (item.image) {
+    modalImage.src = item.image;
+    modalImage.alt = item.title;
+    modalImage.hidden = false;
+  } else {
+    modalImage.hidden = true;
+    modalImage.src = "";
+    modalImage.alt = "";
+  }
+
   modal.classList.remove("hidden");
 }
 
@@ -226,10 +250,14 @@ function createStampCard(item, currentWeekIndex) {
     card.classList.add("opened");
   }
 
+  const visual = isUnlocked && item.image
+    ? `<img class="stamp-image" src="${item.image}" alt="${item.title}" loading="lazy" />`
+    : `<div class="icon">${item.icon}</div>`;
+
   card.innerHTML = `
     <div class="week-label">Week ${item.week}</div>
     <div class="date-label">${formatDateRange(item.start, item.end)}</div>
-    <div class="icon">${item.icon}</div>
+    ${visual}
   `;
 
   card.addEventListener("click", () => {
