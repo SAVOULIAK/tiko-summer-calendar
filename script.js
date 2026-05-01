@@ -250,7 +250,7 @@ function createStampCard(item, currentWeekIndex) {
     card.classList.add("opened");
   }
 
-  const visual = isUnlocked && item.image
+  const visual = item.image
     ? `<img class="stamp-image" src="${item.image}" alt="${item.title}" loading="lazy" />`
     : `<div class="icon">${item.icon}</div>`;
 

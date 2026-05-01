@@ -193,6 +193,11 @@ body {
   cursor: not-allowed;
 }
 
+/* Blur the photo on locked cards so it's a teaser */
+.stamp-door.locked .stamp-image {
+  filter: blur(6px);
+}
+
 /* Locked label */
 .stamp-door.locked::after {
   content: "LOCKED";
