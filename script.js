@@ -5,8 +5,8 @@ const summerData = [
     end: "2026-05-24",
     title: "Picnic in Kaivopuisto",
     title_fi: "Piknik Kaivopuistossa",
-    nickname: "Recommended by SunnyFox",
-    nickname_fi: "Suosittelija SunnyFox",
+    nickname: "Recommended by Semion Chukhno",
+    nickname_fi: "Suosittelija Semion Chukhno",
     description:
       "Start summer with a relaxing picnic near the sea. Bring snacks, a blanket and enjoy Helsinki’s early summer atmosphere.",
     description_fi:
@@ -21,8 +21,8 @@ const summerData = [
     end: "2026-05-31",
     title: "Trip to Suomenlinna",
     title_fi: "Retki Suomenlinnaan",
-    nickname: "Recommended by CodeCaptain",
-    nickname_fi: "Suosittelija CodeCaptain",
+    nickname: "Recommended by Anastasia Savouliak",
+    nickname_fi: "Suosittelija Anastasia Savouliak",
     description:
       "Take the ferry and explore the sea fortress. Great views, walking routes and perfect photo spots for a summer day.",
     description_fi:
@@ -37,8 +37,8 @@ const summerData = [
     end: "2026-06-07",
     title: "Bike Ride in Central Park",
     title_fi: "Pyöräretki Keskuspuistossa",
-    nickname: "Recommended by PixelRider",
-    nickname_fi: "Suosittelija PixelRider",
+    nickname: "Recommended by Semion Chukhno",
+    nickname_fi: "Suosittelija Semion Chukhno",
     description:
       "Enjoy a cycling day through Helsinki Central Park. A calm green route with lots of fresh air and easy movement.",
     description_fi:
@@ -53,8 +53,8 @@ const summerData = [
     end: "2026-06-14",
     title: "Music Night at Linnanmäki Area",
     title_fi: "Musiikki-ilta Linnanmäen alueella",
-    nickname: "Recommended by MelodyByte",
-    nickname_fi: "Suosittelija MelodyByte",
+    nickname: "Recommended by Anastasia Savouliak",
+    nickname_fi: "Suosittelija Anastasia Savouliak",
     description:
       "Visit the amusement park area and enjoy a lively summer evening with lights, rides and fun atmosphere.",
     description_fi:
@@ -69,8 +69,8 @@ const summerData = [
     end: "2026-06-21",
     title: "Botanic Garden Walk",
     title_fi: "Kävely Kasvitieteellisessä puutarhassa",
-    nickname: "Recommended by GreenBug",
-    nickname_fi: "Suosittelija GreenBug",
+    nickname: "Recommended by Semion Chukhno",
+    nickname_fi: "Suosittelija Semion Chukhno",
     description:
       "A peaceful visit to the botanic garden is perfect for a quieter summer week. Great place for photos and relaxing.",
     description_fi:
@@ -85,8 +85,8 @@ const summerData = [
     end: "2026-06-28",
     title: "Beach Day at Hietaniemi",
     title_fi: "Rantapäivä Hietaniemessä",
-    nickname: "Recommended by WaveCoder",
-    nickname_fi: "Suosittelija WaveCoder",
+    nickname: "Recommended by Anastasia Savouliak",
+    nickname_fi: "Suosittelija Anastasia Savouliak",
     description:
       "Spend a warm summer day at one of Helsinki’s best-known beaches. You can swim, sunbathe or just chill with friends.",
     description_fi:
@@ -101,8 +101,8 @@ const summerData = [
     end: "2026-07-05",
     title: "Photo Walk in Oodi & City Center",
     title_fi: "Valokuvauskävely Oodissa ja keskustassa",
-    nickname: "Recommended by LensHero",
-    nickname_fi: "Suosittelija LensHero",
+    nickname: "Recommended by Semion Chukhno",
+    nickname_fi: "Suosittelija Semion Chukhno",
     description:
       "Take a camera or phone and capture summer moments around Oodi, Töölönlahti and central Helsinki.",
     description_fi:
@@ -117,8 +117,8 @@ const summerData = [
     end: "2026-07-12",
     title: "Kayak / Sea Adventure",
     title_fi: "Melontaa / merenseikkailu",
-    nickname: "Recommended by RiverNerd",
-    nickname_fi: "Suosittelija RiverNerd",
+    nickname: "Recommended by Anastasia Savouliak",
+    nickname_fi: "Suosittelija Anastasia Savouliak",
     description:
       "Try a seaside activity week. A simple waterfront trip or kayak-themed day makes the calendar more adventurous.",
     description_fi:
@@ -133,8 +133,8 @@ const summerData = [
     end: "2026-07-19",
     title: "Nature Day in Nuuksio",
     title_fi: "Luontopäivä Nuuksiossa",
-    nickname: "Recommended by ForestLoop",
-    nickname_fi: "Suosittelija ForestLoop",
+    nickname: "Recommended by Semion Chukhno",
+    nickname_fi: "Suosittelija Semion Chukhno",
     description:
       "Take a break from the city and enjoy trails, lakes and forest views. A great week for a nature challenge.",
     description_fi:
@@ -149,8 +149,8 @@ const summerData = [
     end: "2026-07-26",
     title: "Ice Cream by the Harbor",
     title_fi: "Jäätelöä satamassa",
-    nickname: "Recommended by ChillStack",
-    nickname_fi: "Suosittelija ChillStack",
+    nickname: "Recommended by Anastasia Savouliak",
+    nickname_fi: "Suosittelija Anastasia Savouliak",
     description:
       "Simple but perfect: walk by the sea, get ice cream and enjoy the summer mood near the city center.",
     description_fi:
@@ -165,8 +165,8 @@ const summerData = [
     end: "2026-08-02",
     title: "Allas Sea Pool Relax Day",
     title_fi: "Rentoutumispäivä Allas Sea Poolissa",
-    nickname: "Recommended by SaunaDev",
-    nickname_fi: "Suosittelija SaunaDev",
+    nickname: "Recommended by Semion Chukhno",
+    nickname_fi: "Suosittelija Semion Chukhno",
     description:
       "Pools, sea views and a summer city vibe. Great choice for a more relaxing week with friends or family.",
     description_fi:
@@ -181,8 +181,8 @@ const summerData = [
     end: "2026-08-09",
     title: "Seurasaari Summer Escape",
     title_fi: "Kesäpako Seurasaareen",
-    nickname: "Recommended by CampByte",
-    nickname_fi: "Suosittelija CampByte",
+    nickname: "Recommended by Anastasia Savouliak",
+    nickname_fi: "Suosittelija Anastasia Savouliak",
     description:
       "Spend the day outdoors, explore island scenery and enjoy a peaceful summer atmosphere close to the city.",
     description_fi:
@@ -197,8 +197,8 @@ const summerData = [
     end: "2026-09-02",
     title: "Löyly Sunset Evening",
     title_fi: "Auringonlasku-ilta Löylyssä",
-    nickname: "Recommended by SunsetCoder",
-    nickname_fi: "Suosittelija SunsetCoder",
+    nickname: "Recommended by Semion Chukhno",
+    nickname_fi: "Suosittelija Semion Chukhno",
     description:
       "Finish the calendar with a stylish seaside evening. Sauna, terrace and sunset views make a memorable ending.",
     description_fi:
