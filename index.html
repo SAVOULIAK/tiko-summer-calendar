@@ -6,33 +6,33 @@
 
   <title>TIKO Summer Calendar 2026</title>
 
-  <!-- Подключение стилей -->
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body data-lang="en">
 
-  <!-- Переключатель языка -->
+  <!-- Language toggle -->
   <button id="langToggle" class="lang-toggle" type="button">Suomeksi</button>
 
   <!-- =====================================================
-       ОСНОВНОЙ КОНТЕЙНЕР
+       MAIN CONTAINER
        ===================================================== -->
   <main class="passport">
 
     <!-- =====================================================
-         ВЕРХНЯЯ ЧАСТЬ (обложка)
+         TOP COVER
          ===================================================== -->
     <section class="passport-cover">
-      <img 
-        src="passport.png" 
-        alt="Passport cover design" 
-        class="passport-full-image" 
+      <img
+        src="passport.png"
+        alt="Passport cover design"
+        class="passport-full-image"
       />
     </section>
 
     <!-- =====================================================
-         КАЛЕНДАРЬ
+         CALENDAR
          ===================================================== -->
     <section class="calendar-section">
 
@@ -48,29 +48,29 @@
   </main>
 
   <!-- =====================================================
-       МОДАЛЬНОЕ ОКНО
+       MODAL
        ===================================================== -->
   <div id="eventModal" class="modal hidden">
 
     <div class="modal-card">
 
-      <!-- Кнопка закрытия -->
+      <!-- Close button -->
       <button id="closeModal" class="close-btn" aria-label="Close">×</button>
 
-      <!-- Штамп -->
+      <!-- Stamp -->
       <div class="modal-stamp">ENTRY PERMITTED</div>
 
-      <!-- Контент -->
+      <!-- Content -->
       <h3 id="modalTitle">Event title</h3>
 
       <p id="modalDate" class="modal-date"></p>
       <p id="modalNickname" class="modal-nickname"></p>
       <p id="modalDescription" class="modal-description"></p>
 
-      <!-- Фото события -->
+      <!-- Event photo -->
       <img id="modalImage" class="modal-image" src="" alt="" hidden />
 
-      <!-- КАРТА -->
+      <!-- Map -->
       <div class="modal-map">
         <iframe
           id="modalMapFrame"
