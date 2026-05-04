@@ -111,6 +111,7 @@ body {
   text-transform: uppercase;
   color: var(--blue);
   letter-spacing: 1px;
+  white-space: nowrap;
 }
 
 .section-header p {
